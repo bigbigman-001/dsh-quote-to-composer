@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "description": "Select any text in DSH and click the quote pill next to the pointer: it becomes a compact \"Quote\" chip in the composer, with the quoted text on hover. Ctrl+Shift+Q works too.",
+    "title": "Quote to composer"
+  }
+}
