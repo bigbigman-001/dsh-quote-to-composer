@@ -6,7 +6,7 @@
 > reference chip in the composer. Type your follow-up question and send both
 > together — perfect for "what does this line mean?" style prompts.
 
-![A small dark "Quote" pill appears next to the pointer after selecting text](docs/screenshot-pill.png)
+![Demo: select text, click the Quote pill next to the pointer, and a tiny reference chip lands in the composer](docs/demo.gif)
 
 ![The mini reference chip in the composer; hover to see the full quoted text](docs/screenshot-chip.png)
 
