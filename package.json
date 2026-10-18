@@ -34,7 +34,8 @@
     "docs/INSTALL-macOS.md",
     "screenshots.json",
     "docs/screenshot-pill.png",
-    "docs/screenshot-chip.png"
+    "docs/screenshot-chip.png",
+    "CHANGELOG.md"
   ],
   "dsh": {
     "bundle": {
