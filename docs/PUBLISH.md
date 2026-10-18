@@ -9,6 +9,12 @@
 
 发布到 npm 是**可选**的，只影响市场里是否显示下载量，不影响收录。
 
+> **当前进度（2026-10-18）**：第一段已完成 —— 代码在
+> <https://github.com/bigbigman-001/dsh-quote-to-composer>，
+> Release <https://github.com/bigbigman-001/dsh-quote-to-composer/releases/tag/v0.9.2>
+> 已带 Windows / macOS / tgz 三个附件；仓库建好后需**满 24 小时**（到 2026-10-19 16:49 左右）
+> 才能提第二段的 PR。PR 内容就是 `docs/awesome-dsh-plugin-entry.yml` 里的 5 行。
+
 ---
 
 ## 0. 先确认本地已经就绪

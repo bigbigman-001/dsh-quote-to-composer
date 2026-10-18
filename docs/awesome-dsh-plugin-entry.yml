@@ -1,5 +1,5 @@
-url: https://github.com/OWNER/dsh-quote-to-composer
-name: OWNER/dsh-quote-to-composer
+url: https://github.com/bigbigman-001/dsh-quote-to-composer
+name: bigbigman-001/dsh-quote-to-composer
 category: ui
 description:
   en: 'Select text anywhere in DeepSeek Harness, click the quote pill next to the pointer, and the selection lands in the composer as a small quote chip; hover the chip to read the full quote.'
