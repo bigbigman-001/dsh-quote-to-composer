@@ -203,6 +203,24 @@ try {
         $pushed = $false
         $sandboxConfig = $null
         $previousGlobal = $env:GIT_CONFIG_GLOBAL
+        $proxyArgs = @()
+
+        # git does not read the Windows proxy settings, so a machine that reaches
+        # GitHub only through its system proxy would fail on the direct attempt.
+        try {
+            $inet = Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -ErrorAction Stop
+            if ($inet.ProxyEnable -eq 1 -and -not [string]::IsNullOrWhiteSpace($inet.ProxyServer)) {
+                $proxy = ([string]$inet.ProxyServer).Split(';')[0].Trim()
+                if ($proxy -match '=') { $proxy = $proxy.Split('=')[-1] }
+                if ($proxy -notmatch '^[a-z]+://') { $proxy = 'http://' + $proxy }
+                if ($proxy -match '^https?://[^/]+:\d+$') {
+                    $proxyArgs = @('-c', "http.proxy=$proxy")
+                    Write-Host "  using the system proxy for git: $proxy"
+                }
+            }
+        }
+        catch { $proxyArgs = @() }
+
         try {
             if ($rewriteKey) {
                 Write-Host "  mirror rewrite detected ($rewriteKey) - trying a direct connection first"
@@ -213,7 +231,7 @@ try {
                 $env:GIT_CONFIG_GLOBAL = $sandboxConfig
             }
 
-            & git push -u origin $Branch
+            & git @proxyArgs push -u origin $Branch
             if ($LASTEXITCODE -eq 0) { $pushed = $true }
             elseif ($rewriteKey) {
                 $env:GIT_CONFIG_GLOBAL = $previousGlobal

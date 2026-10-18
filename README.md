@@ -12,7 +12,7 @@
 ## 安装
 
 ```sh
-dsh plugin --profile desktop add github:<你的GitHub用户名>/dsh-quote-to-composer
+dsh plugin --profile desktop add github:bigbigman-001/dsh-quote-to-composer
 ```
 
 装完刷新页面即可用（无需重启）。

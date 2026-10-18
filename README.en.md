@@ -32,7 +32,7 @@ Markdown blockquote:
 ## Install
 
 ```sh
-dsh plugin --profile desktop add github:<your-github-name>/dsh-quote-to-composer
+dsh plugin --profile desktop add github:bigbigman-001/dsh-quote-to-composer
 ```
 
 Refresh the page afterwards — no restart needed.
@@ -44,7 +44,7 @@ Refresh the page afterwards — no restart needed.
 - One-shot push helper (writes `repository`/`homepage`/`bugs`, `git init`, commit, push):
 
   ```powershell
-  powershell -ExecutionPolicy Bypass -File .\scripts\publish.ps1 -GitHubUser <your-github-name>
+  powershell -ExecutionPolicy Bypass -File .\scripts\publish.ps1 -GitHubUser bigbigman-001
   ```
 
 - Store entry template: [docs/awesome-dsh-plugin-entry.yml](docs/awesome-dsh-plugin-entry.yml)
