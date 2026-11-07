@@ -1,6 +1,6 @@
 {
   "name": "dsh-quote-to-composer",
-  "version": "0.9.2",
+  "version": "0.9.8",
   "description": "Select text anywhere in DeepSeek Harness, click the pill next to the pointer, and the quote lands in the composer as a tiny chip — hover it to read the full quote. 选中文字 → 鼠标旁「引用」胶囊 → 输入框里的迷你「引用」圆角条；悬停显示被引用内容。",
   "type": "module",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "ui"
   ],
   "engines": {
-    "dsh": ">=0.1.0"
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
   },
   "exports": {
     ".": "./index.js",
