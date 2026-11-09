@@ -9,11 +9,16 @@
 
 发布到 npm 是**可选**的，只影响市场里是否显示下载量，不影响收录。
 
-> **当前进度（2026-10-18）**：第一段已完成 —— 代码在
+> **当前进度（2026-11-10）**：第一段已完成，最新版 **0.9.8** —— 代码在
 > <https://github.com/bigbigman-001/dsh-quote-to-composer>，
-> Release <https://github.com/bigbigman-001/dsh-quote-to-composer/releases/tag/v0.9.2>
-> 已带 Windows / macOS / tgz 三个附件；仓库建好后需**满 24 小时**（到 2026-10-19 16:49 左右）
-> 才能提第二段的 PR。PR 内容就是 `docs/awesome-dsh-plugin-entry.yml` 里的 5 行。
+> Release <https://github.com/bigbigman-001/dsh-quote-to-composer/releases/tag/v0.9.8>
+> 带 Windows / macOS / tgz 三个附件。
+>
+> 0.9.4 起适配 DSH 0.2.2（`engines.dsh: ">=0.2.2-rc.1 <0.3.0"`）：旧版会和核心 `message-quotes`
+> 抢文本规则 id `quote`，在 0.2.2 上直接让整页加载失败，装新版前先确认宿主版本。
+>
+> 仓库已建好超过 24 小时，第二段的 PR 可随时提交；PR 内容就是
+> `docs/awesome-dsh-plugin-entry.yml` 里的 5 行。
 
 ---
 
@@ -206,9 +211,29 @@ npm publish
 
 ## 10. 以后更新版本
 
-1. 改代码，把 `package.json` 的 `version` 加一（例如 `0.9.1`）。
-2. `git add -A; git commit -m "fix: ..."; git push`。
-3. 只想改商店里那一行描述 → 回到第 6 步，编辑你那个 YAML 文件再提一个 PR（同样只动你自己的文件）。
+1. 改代码，把 `package.json` 的 `version` 加一（例如 `0.9.9`），并在 `CHANGELOG.md` 顶部补一节。
+2. `git add -A && git commit -m "release: 0.9.9"`。
+3. 打 tag 并推送：
+
+   ```sh
+   git tag -a v0.9.9 -m "v0.9.9"
+   git push && git push --tags
+   ```
+
+4. 建 Release：<https://github.com/bigbigman-001/dsh-quote-to-composer/releases/new>，
+   选刚推的 tag，标题写版本号，正文贴 `CHANGELOG.md` 里那一节，然后上传三个附件：
+
+   ```sh
+   # 当前目录里要有插件本体 dsh-quote-to-composer/ 和它附带的两份说明
+   zip -r dsh-quote-to-composer-0.9.9-macos.zip   dsh-quote-to-composer INSTALL-macOS.md
+   zip -r dsh-quote-to-composer-0.9.9-windows.zip dsh-quote-to-composer INSTALL-windows.md
+   npm pack            # 产出 dsh-quote-to-composer-0.9.9.tgz
+   ```
+
+   仓库里 `README.md` 的下载表用的是 `releases/latest/download/<文件名>`，
+   文件名带版本号，所以**每次发版都要同步改这三行**，否则 `latest` 会 404。
+
+5. 只想改商店里那一行描述 → 回到第 6 步，编辑你那个 YAML 文件再提一个 PR（同样只动你自己的文件）。
 
 ---
 
@@ -220,7 +245,8 @@ npm publish
 - [x] 去掉 `private: true`，补 `license: MIT`
 - [x] `LICENSE`、`README.md`、`README.en.md`
 - [x] `docs/screenshot-pill.png`、`docs/screenshot-chip.png` + `screenshots.json`
-- [ ] 建 GitHub 仓库并推送（第 1–3 步）
-- [ ] 加 `dsh-plugin` topic（第 4 步）
-- [ ] 等满 24 小时（第 5 步）
-- [ ] 提 PR（第 6 步）
+- [x] 建 GitHub 仓库并推送（第 1–3 步）
+- [x] 加 `dsh-plugin` topic（第 4 步）
+- [x] 等满 24 小时（第 5 步）
+- [x] 建 Release 并上传 Windows / macOS / tgz 三个附件（v0.9.2 → v0.9.8）
+- [ ] 向 awesome-dsh-plugin 提 PR（第 6 步）
