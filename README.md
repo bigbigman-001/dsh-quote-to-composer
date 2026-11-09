@@ -31,9 +31,9 @@
 
 | 平台 | 下载 | 备注 |
 | --- | --- | --- |
-| Windows | [dsh-quote-to-composer-0.9.2-windows.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.2-windows.zip) | 解压后看包里的 `INSTALL-windows.md` |
-| macOS | [dsh-quote-to-composer-0.9.2-macos.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.2-macos.zip) | 解压后看包里的 `INSTALL-macOS.md` |
-| 任意平台（npm 包） | [dsh-quote-to-composer-0.9.2.tgz](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.2.tgz) | 给熟悉 npm 包的人 |
+| Windows | [dsh-quote-to-composer-0.9.8-windows.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-windows.zip) | 解压后看包里的 `INSTALL-windows.md` |
+| macOS | [dsh-quote-to-composer-0.9.8-macos.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-macos.zip) | 解压后看包里的 `INSTALL-macOS.md` |
+| 任意平台（npm 包） | [dsh-quote-to-composer-0.9.8.tgz](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8.tgz) | 给熟悉 npm 包的人 |
 
 也可以不下载，直接在 DSH 里装（见下）。
 
@@ -105,6 +105,8 @@ dsh plugin --profile desktop add github:bigbigman-001/dsh-quote-to-composer
 - 插件是 `window.__ModuleLoader__.load(...)` 形式的浏览器模块，**不含任何 Windows/macOS 专有 API**
 - 只用浏览器标准能力：`getSelection`、`Range`、`matchMedia` 间接（主题变量）、CSS `color-mix()`（带纯色兜底）
 - 字体栈包含 `-apple-system` / `PingFang SC`，图标用 `-webkit-mask` + `mask` 双写
+- 需要 **DeepSeek Harness ≥ 0.2.2-rc.1**：0.9.4 起插件改用独立规则 id `quoteToComposer`，
+  不再和核心 `message-quotes` 抢 `quote`（0.9.1 及更早在 0.2.2 上会让整页加载失败）
 
 ## 开发者说明
 
@@ -156,6 +158,8 @@ scripts/publish.ps1 一键推送到 GitHub 的脚本（给发布者用）
   控制台无本插件告警。
 - 用户气泡渲染规则单测 `_probe/quote-rule.test.mjs` 8/8。
 - 0.9.0 / 0.9.1 / 0.9.2 只改发布元数据与文档，未改交互逻辑。
+- 0.9.4 修复与宿主 `message-quotes` 的规则 id 冲突（改用 `quoteToComposer`，`order: -20`）；
+  0.9.5–0.9.8 为引用芯片的样式与内容规整修正，逐项记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 许可
 

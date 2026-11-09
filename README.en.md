@@ -41,9 +41,9 @@ install notes differ.
 
 | Platform | Download | Notes |
 | --- | --- | --- |
-| Windows | [dsh-quote-to-composer-0.9.2-windows.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.2-windows.zip) | read `INSTALL-windows.md` inside |
-| macOS | [dsh-quote-to-composer-0.9.2-macos.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.2-macos.zip) | read `INSTALL-macOS.md` inside |
-| Any | [dsh-quote-to-composer-0.9.2.tgz](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.2.tgz) | npm package, for people who prefer tarballs |
+| Windows | [dsh-quote-to-composer-0.9.8-windows.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-windows.zip) | read `INSTALL-windows.md` inside |
+| macOS | [dsh-quote-to-composer-0.9.8-macos.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-macos.zip) | read `INSTALL-macOS.md` inside |
+| Any | [dsh-quote-to-composer-0.9.8.tgz](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8.tgz) | npm package, for people who prefer tarballs |
 
 You can also install straight from DSH without downloading anything.
 
@@ -114,6 +114,9 @@ quote block, so it knows exactly what you are asking about.
 - Loaded as `window.__ModuleLoader__.load(...)` — a browser module, no Windows/macOS-specific APIs
 - Uses only standard browser features: `getSelection`, `Range`, CSS `color-mix()` (with a solid fallback)
 - Font stack includes `-apple-system` / `PingFang SC`; the icon uses both `-webkit-mask` and `mask`
+- Requires **DeepSeek Harness ≥ 0.2.2-rc.1**: since 0.9.4 the plugin uses its own rule id
+  `quoteToComposer` instead of colliding with the core `message-quotes` over `quote`
+  (0.9.1 and earlier break the whole page on 0.2.2)
 
 ## For developers
 
@@ -171,6 +174,9 @@ scripts/publish.ps1 one-shot publish helper (for the maintainer)
   warnings in the console.
 - The user-text rendering rule passes 8/8 unit cases.
 - 0.9.0 / 0.9.1 / 0.9.2 changed packaging and docs only.
+- 0.9.4 fixes the rule-id collision with the host's `message-quotes` (own id
+  `quoteToComposer`, `order: -20`); 0.9.5–0.9.8 refine the quote chip's visuals and
+  text normalization — see [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

@@ -20,7 +20,7 @@
 
 ## 方式 B：下载本页附带的 zip，解压后按目录安装
 
-1. 下载 `dsh-quote-to-composer-0.9.2-macos.zip`，双击解压出 `dsh-quote-to-composer` 文件夹
+1. 下载 `dsh-quote-to-composer-0.9.8-macos.zip`，双击解压出 `dsh-quote-to-composer` 文件夹
 2. 把文件夹放到固定位置，例如 `~/Documents/dsh-quote-to-composer`
 3. DSH → **插件** → **添加插件**，填这个目录的绝对路径（把 `你的用户名` 换成实际用户名）：
 
