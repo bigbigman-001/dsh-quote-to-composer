@@ -2,6 +2,12 @@
 
 [中文](README.md) | English
 
+[![release](https://img.shields.io/github/v/release/bigbigman-001/dsh-quote-to-composer?label=release&color=2f81f7)](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest)
+[![downloads](https://img.shields.io/github/downloads/bigbigman-001/dsh-quote-to-composer/total?label=downloads&color=2ea043)](https://github.com/bigbigman-001/dsh-quote-to-composer/releases)
+[![stars](https://img.shields.io/github/stars/bigbigman-001/dsh-quote-to-composer?label=stars&color=d29922)](https://github.com/bigbigman-001/dsh-quote-to-composer/stargazers)
+[![DSH](https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A5%200.2.2--rc.1-6e40c9)](#%E5%85%BC%E5%AE%B9%E6%80%A7)
+[![license](https://img.shields.io/github/license/bigbigman-001/dsh-quote-to-composer?color=8b949e)](LICENSE)
+
 > Select any text inside DSH, click **Quote**, and it becomes a tiny inline
 > reference chip in the composer. Type your follow-up question and send both
 > together — perfect for "what does this line mean?" style prompts.
@@ -9,6 +15,20 @@
 ![Demo: select text, click the Quote pill next to the pointer, and a tiny reference chip lands in the composer](docs/demo.gif)
 
 ![The mini reference chip in the composer; hover to see the full quoted text](docs/screenshot-chip.png)
+
+## Contents
+
+- [What it does](#what-it-does)
+- [Download](#download)
+- [Install](#install)
+- [Usage](#usage)
+- [Uninstall / update](#uninstall--update)
+- [FAQ](#faq)
+- [Compatibility](#compatibility)
+- [For developers](#for-developers)
+- [Verified](#verified)
+- [Feedback](#feedback)
+- [License](#license)
 
 ## What it does
 
@@ -44,6 +64,8 @@ install notes differ.
 | Windows | [dsh-quote-to-composer-0.9.8-windows.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-windows.zip) | read `INSTALL-windows.md` inside |
 | macOS | [dsh-quote-to-composer-0.9.8-macos.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-macos.zip) | read `INSTALL-macOS.md` inside |
 | Any | [dsh-quote-to-composer-0.9.8.tgz](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8.tgz) | npm package, for people who prefer tarballs |
+
+Current release: **v0.9.8** (2026-11-10) · older builds on [Releases](https://github.com/bigbigman-001/dsh-quote-to-composer/releases) · changes in [CHANGELOG.md](CHANGELOG.md)
 
 You can also install straight from DSH without downloading anything.
 
@@ -177,6 +199,11 @@ scripts/publish.ps1 one-shot publish helper (for the maintainer)
 - 0.9.4 fixes the rule-id collision with the host's `message-quotes` (own id
   `quoteToComposer`, `order: -20`); 0.9.5–0.9.8 refine the quote chip's visuals and
   text normalization — see [CHANGELOG.md](CHANGELOG.md).
+
+## Feedback
+
+- Bugs and ideas: [open an issue](https://github.com/bigbigman-001/dsh-quote-to-composer/issues)
+- If it saves you time: leave a [⭐ star](https://github.com/bigbigman-001/dsh-quote-to-composer/stargazers) — it is also the "likes" count in the plugin market
 
 ## License
 

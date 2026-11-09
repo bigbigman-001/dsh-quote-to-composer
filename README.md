@@ -2,12 +2,32 @@
 
 中文 | [English](README.en.md)
 
+[![release](https://img.shields.io/github/v/release/bigbigman-001/dsh-quote-to-composer?label=release&color=2f81f7)](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest)
+[![downloads](https://img.shields.io/github/downloads/bigbigman-001/dsh-quote-to-composer/total?label=downloads&color=2ea043)](https://github.com/bigbigman-001/dsh-quote-to-composer/releases)
+[![stars](https://img.shields.io/github/stars/bigbigman-001/dsh-quote-to-composer?label=stars&color=d29922)](https://github.com/bigbigman-001/dsh-quote-to-composer/stargazers)
+[![DSH](https://img.shields.io/badge/DeepSeek%20Harness-%E2%89%A5%200.2.2--rc.1-6e40c9)](#%E5%85%BC%E5%AE%B9%E6%80%A7)
+[![license](https://img.shields.io/github/license/bigbigman-001/dsh-quote-to-composer?color=8b949e)](LICENSE)
+
 > 在 DSH 里**选中一段文字 → 点一下「引用」→ 它就变成输入框里的一条迷你引用条**，
 > 接着写你的追问，一起发出去。适合「这句话什么意思」「这段代码为什么报错」这种指代式提问。
 
 ![演示：选中文字 → 指针旁出现「引用」胶囊 → 输入框里出现迷你引用条](docs/demo.gif)
 
 ![输入框里的迷你引用条；悬停显示被引用的完整内容](docs/screenshot-chip.png)
+
+## 目录
+
+- [它能做什么](#它能做什么)
+- [下载](#下载)
+- [安装](#安装)
+- [用法](#用法)
+- [卸载 / 升级](#卸载--升级)
+- [常见问题](#常见问题)
+- [兼容性](#兼容性)
+- [开发者说明](#开发者说明)
+- [验证状态](#验证状态)
+- [反馈与支持](#反馈与支持)
+- [许可](#许可)
 
 ## 它能做什么
 
@@ -34,6 +54,8 @@
 | Windows | [dsh-quote-to-composer-0.9.8-windows.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-windows.zip) | 解压后看包里的 `INSTALL-windows.md` |
 | macOS | [dsh-quote-to-composer-0.9.8-macos.zip](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8-macos.zip) | 解压后看包里的 `INSTALL-macOS.md` |
 | 任意平台（npm 包） | [dsh-quote-to-composer-0.9.8.tgz](https://github.com/bigbigman-001/dsh-quote-to-composer/releases/latest/download/dsh-quote-to-composer-0.9.8.tgz) | 给熟悉 npm 包的人 |
+
+当前最新：**v0.9.8**（2026-11-10 发布）· 历史版本见 [Releases](https://github.com/bigbigman-001/dsh-quote-to-composer/releases) · 改动见 [CHANGELOG.md](CHANGELOG.md)
 
 也可以不下载，直接在 DSH 里装（见下）。
 
@@ -160,6 +182,11 @@ scripts/publish.ps1 一键推送到 GitHub 的脚本（给发布者用）
 - 0.9.0 / 0.9.1 / 0.9.2 只改发布元数据与文档，未改交互逻辑。
 - 0.9.4 修复与宿主 `message-quotes` 的规则 id 冲突（改用 `quoteToComposer`，`order: -20`）；
   0.9.5–0.9.8 为引用芯片的样式与内容规整修正，逐项记录见 [CHANGELOG.md](CHANGELOG.md)。
+
+## 反馈与支持
+
+- 遇到问题、想要新功能：[开 Issue](https://github.com/bigbigman-001/dsh-quote-to-composer/issues)
+- 觉得好用：点个 [⭐ Star](https://github.com/bigbigman-001/dsh-quote-to-composer/stargazers) —— 它也是插件市场里「点赞数」的来源
 
 ## 许可
 
